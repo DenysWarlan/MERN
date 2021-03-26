@@ -1,0 +1,5 @@
+{
+  "port": 5000,
+  "jwtKey": "Denis course mern",
+  "mongoUri": "mongodb+srv://Denis:1234wqer@cluster0.e5g4l.mongodb.net/app?retryWrites=true&w=majority"
+}
