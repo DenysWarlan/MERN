@@ -4,11 +4,11 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {select, Store} from '@ngrx/store';
 import {Observable, Subject} from 'rxjs';
 import {State} from "../../reducers";
-import {loadLogins} from "../../reducers/auth/actions/login.actions";
-import {getIsAuthErrors, getIsAuthLoading, getIsAuthSuccess} from "../../reducers/auth/selectors/auth.selectors"
-import {HttpErrorResponse} from "@angular/common/http";
+import {loadLogins, loadLoginsClear} from "../../reducers/auth/actions/login.actions";
+import {getIsAuthErrors, getIsAuthLoading, getIsAuthSuccess} from "../../reducers/auth/selectors/login.selectors"
 import {takeUntil} from "rxjs/operators";
 import {setToken} from "../../reducers/auth/actions/setToken.actions";
+import {HttpErrorResponse} from "@angular/common/http";
 
 @Component({
   selector: 'app-login-page',
@@ -21,7 +21,7 @@ export class LoginPageComponent implements OnInit, OnDestroy {
   form!: FormGroup;
   isAuthSuccess$: Observable<boolean>;
   isAuthLoading$: Observable<boolean>;
-  isAuthErrors$: Observable<any|boolean>;
+  isAuthErrors$: Observable<HttpErrorResponse>;
   private destroyed$: Subject<boolean> = new Subject();
   constructor(
     private router: Router,
@@ -42,6 +42,8 @@ export class LoginPageComponent implements OnInit, OnDestroy {
   }
 ngOnDestroy() {
   this.destroyed$.next(false);
+  this.store.dispatch(loadLoginsClear());
+
 }
 
   loginUser() {

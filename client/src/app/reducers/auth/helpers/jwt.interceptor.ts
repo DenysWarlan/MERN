@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor } from '@angular/common/http';
-// @ts-ignore
-import { Observable } from 'rxjs/Observable';
+import {Observable} from "rxjs";
 
 @Injectable()
 export class JwtInterceptor implements HttpInterceptor {
@@ -12,7 +11,7 @@ export class JwtInterceptor implements HttpInterceptor {
     if (tokenParse) {
       request = request.clone({
         setHeaders: {
-          Authorization: `Bearer ${tokenParse}`
+          Authorization: `${tokenParse}`
         }
       });
     }
