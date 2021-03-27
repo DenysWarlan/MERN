@@ -1,0 +1,7 @@
+<div *ngFor="let element of (data$ | async)">
+  <mat-card>
+    <mat-card-title>
+      {{element?.name}}
+    </mat-card-title>
+  </mat-card>
+</div>

@@ -1,10 +1,10 @@
-<div class="d-flex justify-content-center align-items-center flex-column mt-5">
- <mat-card class="bg-light w-25">
+<div class="d-flex justify-content-center align-items-center flex-column mt-5 row">
+ <mat-card class="bg-light col-lg-3 col-md-6 col-xs-12">
    <mat-card-title class="text-center">
      Sing in
    </mat-card-title>
    <mat-error *ngIf="(isAuthErrors$ | async)">
-     <h5 class="mat-error text-center">{{(isAuthErrors$ | async)?.message}}</h5>
+     <h5 class="mat-error text-center">{{(isAuthErrors$ | async)?.error?.message}}</h5>
    </mat-error>
    <form [formGroup]="form" (submit)="form && form.valid && loginUser()" class="d-flex w-100 flex-column">
      <mat-form-field class="w-100">

@@ -1,0 +1,22 @@
+<section class="d-flex flex-column w-50 m-auto">
+  <h3 class="mt-5">Add new course</h3>
+  <fom [formGroup]="form">
+    <mat-error *ngIf="(isAddCourseErrors$| async)"> {{(isAddCourseErrors$ | async)?.error?.message}}</mat-error>
+    <mat-form-field class="w-100">
+      <mat-label>Name course</mat-label>
+      <input matInput formControlName="name" />
+      <mat-error *ngIf="form?.get('Name')?.hasError('required')"> Pole wymagane </mat-error>
+    </mat-form-field>
+    <mat-form-field class="w-100">
+      <mat-label>Price course</mat-label>
+      <input matInput  formControlName="price" />
+      <mat-error *ngIf="form?.get('Price')?.hasError('required')"> Pole wymagane </mat-error>
+    </mat-form-field>
+    <mat-form-field class="w-100">
+      <mat-label>Url to image</mat-label>
+      <input matInput  formControlName="urlImg" />
+      <mat-error *ngIf="form?.get('UrlImg')?.hasError('required')"> Pole wymagane </mat-error>
+    </mat-form-field>
+  <button class="btn-success w-25 mt-2" (click)="onSubmit()" mat-button> ADD </button>
+  </fom>
+</section>

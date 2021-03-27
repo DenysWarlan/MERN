@@ -19,6 +19,7 @@ export const reducer = createReducer(
   on(loginAction.loadLogins, itemOperationStateReducerUtil.request),
   on(loginAction.loadLoginsSuccess, itemOperationStateReducerUtil.requestSuccess),
   on(loginAction.loadLoginsFailure, itemOperationStateReducerUtil.requestFailure),
+  on(loginAction.loadLoginsClear, itemOperationStateReducerUtil.clear),
 
 );
 

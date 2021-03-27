@@ -131,6 +131,7 @@
   },
   "defaultProject": "mern-fe",
   "cli": {
+    "analytics": "eaa5b231-ce80-414a-9187-cea7beb65238",
     "defaultCollection": "@ngrx/schematics"
   }
 }

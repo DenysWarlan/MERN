@@ -75,7 +75,8 @@ export const itemOperationStateReducerUtil = {
     };
   },
   requestFailure: (state: SingleState, action: any): SingleState => {
-    const failPayload = action.error.error;
+    const failPayload = action.error;
+    console.log(failPayload)
     return {
       ...state,
       res: [],

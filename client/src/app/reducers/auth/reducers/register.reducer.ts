@@ -19,6 +19,7 @@ export const reducer = createReducer(
   on(registerAction.loadRegisters, itemOperationStateReducerUtil.request),
   on(registerAction.loadRegistersSuccess, itemOperationStateReducerUtil.requestSuccess),
   on(registerAction.loadRegistersFailure, itemOperationStateReducerUtil.requestFailure),
+  on(registerAction.loadRegistersClear, itemOperationStateReducerUtil.clear),
 
 );
 

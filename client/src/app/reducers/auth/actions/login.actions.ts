@@ -15,3 +15,6 @@ export const loadLoginsFailure = createAction(
   '[Login] Load Logins Failure',
   props<{ error: HttpErrorResponse }>()
 );
+export const loadLoginsClear = createAction(
+  '[Login] Load Logins Clear',
+);
